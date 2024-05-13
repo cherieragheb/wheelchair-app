@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:tom2/screens/home.dart';
 import 'package:tom2/screens/signup.dart';
 
 class login extends StatefulWidget {
@@ -120,7 +119,12 @@ class _loginState extends State<login> {
                                 borderRadius: BorderRadius.circular(8),
                                 color: const Color.fromARGB(140, 92, 37, 141)),
                             child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const Home()));
+                                },
                                 child: const Text(
                                   'Log in',
                                   style: TextStyle(

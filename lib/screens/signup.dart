@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tom2/screens/home.dart';
 import 'package:tom2/screens/login.dart';
 import 'package:tom2/screens/provider.dart';
+import 'package:tom2/screens/voulnteer.dart';
 
 class signup extends StatefulWidget {
   static const String screenroute = 'signup';
@@ -23,7 +25,7 @@ class _signupState extends State<signup> {
   final confirmPassword = TextEditingController();
   final formkey = GlobalKey<FormState>;
   bool isvisble = false;
-  String dropdownValue = 'voulnteer';
+  String dropdownValue = 'w';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,7 @@ class _signupState extends State<signup> {
                             fontSize: 50, fontWeight: FontWeight.bold),
                       ),
                     ),
-//
+// ------------------- First COntainer
 
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -106,7 +108,36 @@ class _signupState extends State<signup> {
                         hintText: 'Phone Number',
                       )),
                     ),
-                    //
+                    const Padding(padding: EdgeInsets.only(top: 15.0)),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.deepPurple.withOpacity(.2)),
+                      child: TextFormField(
+                          decoration: const InputDecoration(
+                        icon: Icon(Icons.lock),
+                        border: InputBorder.none,
+                        hintText: 'password',
+                      )),
+                    ),
+                    const Padding(padding: EdgeInsets.only(top: 15.0)),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.deepPurple.withOpacity(.2)),
+                      child: TextFormField(
+                          decoration: const InputDecoration(
+                        icon: Icon(Icons.lock),
+                        border: InputBorder.none,
+                        hintText: 'confirm password',
+                      )),
+                    ),
                     const Padding(padding: EdgeInsets.only(top: 15.0)),
                     Container(
                         padding: const EdgeInsets.symmetric(
@@ -134,21 +165,21 @@ class _signupState extends State<signup> {
                           },
                           items: const [
                             DropdownMenuItem<String>(
-                              value: 'voulnteer',
+                              value: 'v',
                               child: Text(
                                 'voulneteer',
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
                             DropdownMenuItem<String>(
-                              value: 'wheelchair',
+                              value: 'w',
                               child: Text(
                                 'wheelchair',
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
                             DropdownMenuItem<String>(
-                              value: 'provider',
+                              value: 'p',
                               child: Text(
                                 'provider',
                                 style: TextStyle(color: Colors.black),
@@ -168,10 +199,30 @@ class _signupState extends State<signup> {
                           color: const Color.fromARGB(140, 92, 37, 141)),
                       child: TextButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => provider()));
+                            switch (dropdownValue) {
+                              case 'p':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Provider()));
+                                break;
+                              case 'w':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Home()));
+                                break;
+                              case 'v':
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Voulnteer()));
+                                break;
+                              default:
+                                print("Wrong choice");
+                            }
                           },
                           child: const Text(
                             'next',

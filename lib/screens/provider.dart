@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tom2/screens/home.dart';
+import 'package:tom2/screens/nav_menu.dart';
 
-class provider extends StatefulWidget {
+class Provider extends StatefulWidget {
   static const String screenroute = 'provider';
 
+  const Provider({super.key});
+
   @override
-  State<provider> createState() => _providerState();
+  State<Provider> createState() => _ProviderState();
 }
 
-class _providerState extends State<provider> {
+class _ProviderState extends State<Provider> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +30,36 @@ class _providerState extends State<provider> {
                             fontSize: 50, fontWeight: FontWeight.bold),
                       ),
                     ),
-//
+                    const Padding(padding: EdgeInsets.only(top: 15.0)),
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.deepPurple.withOpacity(.2)),
+                        child: TextFormField(
+                            decoration: const InputDecoration(
+                          icon: Icon(Icons.home_work_sharp),
+                          border: InputBorder.none,
+                          hintText: 'Name of place ',
+                        ))),
+                    const Padding(padding: EdgeInsets.only(top: 15.0)),
+
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.deepPurple.withOpacity(.2)),
+                        child: TextFormField(
+                            decoration: const InputDecoration(
+                          icon: Icon(Icons.category_sharp),
+                          border: InputBorder.none,
+                          hintText: 'type of place',
+                        ))),
+                    const Padding(padding: EdgeInsets.only(top: 15.0)),
 
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -91,6 +124,7 @@ class _providerState extends State<provider> {
                     const SizedBox(
                       height: 10,
                     ),
+
                     Container(
                       height: 55,
                       width: MediaQuery.of(context).size.width * .99,
@@ -98,7 +132,12 @@ class _providerState extends State<provider> {
                           borderRadius: BorderRadius.circular(8),
                           color: const Color.fromARGB(140, 92, 37, 141)),
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => NavMenu()));
+                          },
                           child: const Text(
                             'finish',
                             style: TextStyle(
