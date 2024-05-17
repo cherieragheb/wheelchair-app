@@ -40,7 +40,7 @@ class LoginController extends GetxController {
         if (kDebugMode) {
           print('=== Log in fb successfully: ${userCred.user!.uid}===');
         }
-        await UserController.instance.updateCurrentUserById(userCred.user!.uid);
+        UserController.instance.updateCurrentUserById(userCred.user!.uid);
         // success message
         CustomSnackbar.successSnackbar(
             message: 'You are logged in successfully.');

@@ -54,7 +54,7 @@ class RequestController extends GetxController {
   Future<void> addNewRequest(sourceId, targetId) async {
     EasyLoading.showProgress(
       0.3,
-      status: 'downloading...',
+      status: 'Sending...',
       maskType: EasyLoadingMaskType.black,
     );
     final newRequest = RequestModel(
@@ -72,7 +72,7 @@ class RequestController extends GetxController {
           .doc(newRequest.id)
           .set(newRequest.toMap());
       // refresh list
-      loadRequests();
+      await loadRequests();
       updateFilterdRequests(sourceId);
       if (kDebugMode) print('===added new request successfully===');
       // success messege

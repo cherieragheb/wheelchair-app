@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:tom/common/themes/colors.dart';
+import 'package:tom/controllers/request_controller.dart';
+import 'package:tom/controllers/user_controller.dart';
 import 'package:tom/models/user_model.dart';
 import 'package:tom/views/chatpage.dart';
 import 'package:tom/views/volunteers/volunteer_reviews_screen.dart.dart';
@@ -14,8 +16,11 @@ class VolunteerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final contoller = Get.put(RequestController());
     popUpMenuAction(String value) {
       if (value == 'Request') {
+        contoller.addNewRequest(
+            UserController.instance.currrentUser.id, user.id);
       } else if (value == 'Chat') {
         Get.to(() => const ChatPage());
       } else if (value == 'More info') {

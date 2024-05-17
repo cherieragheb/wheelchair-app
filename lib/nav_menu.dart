@@ -19,7 +19,8 @@ class NavMenu extends StatelessWidget {
             children: controller.userSpecificWidgets(),
           ),
           bottomNavigationBar: NavigationBar(
-            backgroundColor: MyColors.secondery,
+            elevation: 0,
+            backgroundColor: MyColors.accent,
             selectedIndex: controller.pageIndex.value,
             onDestinationSelected: (value) => controller.onChangePage(value),
             height: 60,

@@ -112,7 +112,7 @@ class ReviewsController extends GetxController {
             .set(data, SetOptions(merge: true));
         // refresh list
         PlaceController.instance.loadPlaces();
-        loadReviews();
+        await loadReviews();
         updateFilterdReviews(target.id);
         if (kDebugMode) print('===added new place Review successfully===');
         // success messege

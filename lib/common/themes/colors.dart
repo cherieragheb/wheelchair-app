@@ -6,7 +6,7 @@ class MyColors {
   static Color primary = const Color(0xFF7b0202);
   static Color primary2 = const Color(0xFF7b0202);
   static Color secondery = const Color(0xFF7b0202);
-  static Color accent = const Color(0xffe8def8);
+  static Color accent = const Color.fromARGB(255, 236, 187, 187);
   static Color randomColor() =>
       Colors.primaries[Random().nextInt(Colors.primaries.length)];
 

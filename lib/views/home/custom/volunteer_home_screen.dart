@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tom/common/themes/colors.dart';
 import 'package:tom/controllers/user_controller.dart';
+import 'package:tom/views/volunteers/requests_screen.dart';
 
 class VolunteerHomeScreen extends StatelessWidget {
   const VolunteerHomeScreen({super.key});
@@ -52,7 +54,7 @@ class VolunteerHomeScreen extends StatelessWidget {
                         color: MyColors.white,
                       ),
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => const RequestsScreen()),
                           child: Text(
                             'Requests',
                             style: TextStyle(

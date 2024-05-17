@@ -19,8 +19,12 @@ class UserController extends GetxController {
     super.onReady();
   }
 
-  Future<void> updateCurrentUserById(String id) async {
+  void updateCurrentUserById(String id) {
     currrentUser = users.firstWhere((user) => user.id == id);
+  }
+
+  UserModel getUserById(String id) {
+    return users.firstWhere((user) => user.id == id);
   }
 
   Future<void> loadUsers() async {
