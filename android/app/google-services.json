@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856159646097",
+    "project_id": "tom-flutter",
+    "storage_bucket": "tom-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856159646097:android:a5a3e062a6f4eb9b4dea30",
+        "android_client_info": {
+          "package_name": "com.example.tom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpXhr7yCvxWWgAgNp1IJ8iExv20lgBPmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
